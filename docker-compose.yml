@@ -11,6 +11,11 @@ services:
       REDMINE_DB_MYSQL: db
       REDMINE_DB_PASSWORD: example
       REDMINE_SECRET_KEY_BASE: supersecretkey
+    volumes:
+      - ./redmine/files:/usr/src/redmine/files
+      - ./redmine/log:/usr/src/redmine/log
+      - ./redmine/plugins:/usr/src/redmine/plugins
+      - ./redmine/public/themes:/usr/src/redmine/public/themes
     logging:
       driver: "fluentd"
       options:
