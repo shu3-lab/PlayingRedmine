@@ -7,6 +7,8 @@ services:
     restart: always
     ports:
       - 8080:3000
+    deploy:
+      replicas: 1
     environment:
       REDMINE_DB_MYSQL: db
       REDMINE_DB_PASSWORD: example
@@ -42,8 +44,8 @@ services:
     volumes:
       - ./fluentd/config:/fluentd/etc
     ports:
-      - "24220:24220"
-      - "24220:24220/udp"
+      - "24220:2222"
+      - "24220:2222/udp"
     depends_on: 
       - elasticsearch
       - kibana
