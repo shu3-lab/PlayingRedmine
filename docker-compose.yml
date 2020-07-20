@@ -36,7 +36,9 @@ services:
       - "./mysql/data:/var/lib/mysql"
   
   fluentd:
-    build: ./fluentd
+    #use image on loacl registory for compose on kubernetes
+    #build: ./fluentd
+    image: localhost:5000/redmine_fluentd
     volumes:
       - ./fluentd/config:/fluentd/etc
     ports:
@@ -47,7 +49,9 @@ services:
       - kibana
 
   elasticsearch:
-    build: ./elasticsearch
+    #use image on loacl registory for compose on kubernetes
+    #build: ./elasticsearch
+    image: localhost:5000/redmine_elasticsearch
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -60,6 +64,8 @@ services:
         hard: -1
 
   kibana:
-    build: ./kibana
+    #use image on loacl registory for compose on kubernetes
+    #build: ./kibana
+    image: localhost:5000/redmine_kibana
     ports:
       - "5601:5601"
