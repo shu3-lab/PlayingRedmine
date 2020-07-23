@@ -16,3 +16,7 @@ Run it by `docker-compose up --build` .
 ## Confirm kubernetes status
 
 run `kubectl get services,pods,deployment,pvc,pv`
+
+## Rough overview when using compose-on-kubernetes
+
+<img width="850" alt="スクリーンショット 2020-07-23 22 25 39" src="https://user-images.githubusercontent.com/56756975/88291741-adbb9780-cd33-11ea-949c-24a684a8a94a.png">
